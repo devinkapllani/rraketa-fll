@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Digital Museum - RRAKETA</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="main-header">
+  <div class="logo-left">
+    <img src="images/fll.png">
+  </div>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="museum.html" class="active">Digital Museum</a>
+    <a href="missions.html">Missions</a>
+    <a href="references.html">References</a>
+    <a href="about.html">About</a>
+  </nav>
+
+  <div class="logo-right">
+    <img src="images/rraketa.png">
+  </div>
+</header>
+
+<canvas id="galaxy"></canvas>
+
+<section class="page-section">
+  <h1 class="hero-title">Digital Museum</h1>
+  <div id="artifactGallery" class="artifact-grid"></div>
+</section>
+
+<!-- MODAL -->
+<div id="artifactModal" class="modal">
+  <div class="modal-content">
+    <span class="close-btn" onclick="closeModal()">×</span>
+
+    <div class="modal-body">
+
+      <!-- LEFT SIDE -->
+      <div class="modal-images">
+        <div>
+          <h3>Original</h3>
+          <img id="modalImage">
+        </div>
+
+        <div>
+          <h3>Reconstructed</h3>
+          <img id="reconstructedImage">
+        </div>
+      </div>
+
+      <!-- RIGHT SIDE -->
+      <div class="modal-info">
+        <h2 id="modalTitle"></h2>
+        <p id="modalDesc"></p>
+        <p id="modalAge"></p>
+
+        <div class="modal-buttons">
+          <button onclick="restoreAI()">🔥 Reconstruct with AI</button>
+          <button onclick="detectAgeAI()">🕰 Detect Age</button>
+          <button onclick="generate3DAI()">🧊 Generate 3D</button>
+        </div>
+
+        <h3 class="model-title">🧊 Interactive 3D Model</h3>
+
+        <div id="model3d-wrapper">
+          <div id="model3d"></div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- THREE JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+
+<script src="script.js"></script>
+
+</body>
+</html>
